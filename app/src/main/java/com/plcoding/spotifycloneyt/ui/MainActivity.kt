@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity() {
                 when (result.status) {
                     Status.ERROR -> Snackbar.make(
                         rootLayout,
-                        result.message ?: "An unknown error occured",
+                        result.message ?: "An unknown error occurred",
                         Snackbar.LENGTH_SHORT
                     ).show()
                     else -> Unit
