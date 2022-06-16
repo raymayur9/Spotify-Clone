@@ -28,7 +28,7 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
         setupRecyclerView()
         subscribeToObservers()
 
-        songAdapter.setOnItemClickListener {
+        songAdapter.setItemClickListener {
             mainViewModel.playOrToggleSong(it)
         }
     }
@@ -37,6 +37,7 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
         adapter = songAdapter
         layoutManager = LinearLayoutManager(requireContext())
     }
+
     private fun subscribeToObservers() {
         mainViewModel.mediaItems.observe(viewLifecycleOwner) { result ->
             when (result.status) {
@@ -51,4 +52,5 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
             }
         }
     }
+
 }
